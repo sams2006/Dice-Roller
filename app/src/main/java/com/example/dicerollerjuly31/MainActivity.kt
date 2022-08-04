@@ -30,14 +30,15 @@ class MainActivity : AppCompatActivity() {
         val image : ImageView = findViewById(R.id.img_number)
         val dice = Dice(6)
 
-        when(dice.roll()) {
-            1 ->  image.setImageResource(R.drawable.dice_1)
-            2 ->  image.setImageResource(R.drawable.dice_2)
-            3 ->  image.setImageResource(R.drawable.dice_3)
-            4 ->  image.setImageResource(R.drawable.dice_4)
-            5 ->  image.setImageResource(R.drawable.dice_5)
-            6 ->  image.setImageResource(R.drawable.dice_6)
+       val imageRe = when(dice.roll()) {
+            1 ->  R.drawable.dice_1
+            2 ->  R.drawable.dice_2
+            3 ->  R.drawable.dice_3
+            4 ->  R.drawable.dice_4
+            5 ->  R.drawable.dice_5
+            else ->  R.drawable.dice_6
         }
+        image.setImageResource(imageRe)
 
     }
 }
